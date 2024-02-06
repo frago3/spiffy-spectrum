@@ -1,0 +1,19 @@
+{
+
+    "name": "María Session",
+    "cover": "./cover/maria.jpg",
+    "tracklist": [
+        {
+            "name": "Strauss",
+            "src": "https://sveltejs.github.io/assets/music/strauss.mp3"
+        },
+        {
+            "name": "Beethoven",
+            "src": "https://sveltejs.github.io/assets/music/beethoven.mp3"
+        },
+        {
+            "name": "Mozart",
+            "src": "https://sveltejs.github.io/assets/music/mozart.mp3"
+        }
+    ]
+}
