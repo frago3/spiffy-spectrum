@@ -92,7 +92,6 @@
         </div>
     </div>
     <div class="py-5">
-        <h1 class="px-3 pb-3">Tracklist:</h1>
         {#each tracklist as { name }, i}
         <div>
             <button class="{active == i && 'font-bold'} px-3 py-1.5 active:scale-95 active:bg-slate-200"
