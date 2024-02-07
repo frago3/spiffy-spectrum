@@ -22,8 +22,13 @@ const { album } = Astro.props;
 ---
 
 <Layout title={album.data.name}>
-    <Image src={album.data.cover} alt={album.id}/>
-    <Player client:load tracklist={album.data.tracklist} albumName={album.data.name}/>
+    <main class="md:p-8 min-h-svh">
+        <h1 class="text-3xl mb-5 hidden md:block">{album.data.name}</h1>
+        <div class="grid grid-rows-1 md:grid-cols-2 md:gap-x-6">
+            <Image src={album.data.cover} alt={album.id}/>
+            <Player client:load tracklist={album.data.tracklist} albumName={album.data.name}/>
+        </div>
+    </main>
 </Layout>
 
 <!-- <Player client:load tracklist={album.data.tracklist}/> -->

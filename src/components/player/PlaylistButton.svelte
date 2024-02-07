@@ -4,9 +4,9 @@
 </script>
 
 {#if isLoading}
-    <button class="p-0.5 border border-gray-300 pointer-events-none">
+    <button class="p-1 border border-gray-300 pointer-events-none">
         <svg
-            class="animate-spin-slow"
+            class="animate-spin"
             width="12"
             height="12"
             viewBox="0 0 80 80"
@@ -19,9 +19,7 @@
     </button>
 {:else}
     <button
-        class="p-0.5 border border-gray-300 active:scale-90"
-        on:click
-    >
+        class="p-1 border border-gray-300 active:scale-90" on:click>
         <svg
             width="12"
             height="12"

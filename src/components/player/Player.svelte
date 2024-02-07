@@ -2,11 +2,12 @@
     import { onMount } from "svelte";
     import PlayButton from "./PlayButton.svelte";
     import SkipButton from "./SkipButton.svelte";
+    import PlaylistButton from "./PlaylistButton.svelte";
     import { formatTime } from "./utils";
 
     export let tracklist = [];
-    export let albumName = ""
-    // let player = new Audio();
+    export let albumName = "";
+
     let player;
     let active = 0;
     $: track = tracklist[active];
@@ -61,41 +62,49 @@
     src={track.src}
 ></audio>
 
-<div class="pt-3 pl-3 pr-1 border">
-    <div class="flex items-end gap-x-3">
-        <PlayButton
-        on:click={() => (isPlaying ? pause() : play())}
-        {isPlaying}
-        {isLoading}
-        />
+<div>
+    <div class="border pt-3 pl-3 pr-1 pb-1">
+        <div class="flex items-end gap-x-3">
+            <PlayButton
+                on:click={() => (isPlaying ? pause() : play())}
+                {isPlaying}
+                {isLoading}
+            />
 
-        <div>
-            <h1 class="font-bold text-lg">{albumName}</h1>
-            <span>{track.name}</span>
-            <span class="text-sm">{formatTime(currentTime)} / {formatTime(duration)}</span>
+            <div>
+                <h1 class="font-bold text-lg">{albumName}</h1>
+                <span>{track.name}</span>
+                <span class="text-sm"
+                    >{formatTime(currentTime)} / {formatTime(duration)}</span
+                >
+            </div>
+        </div>
+
+        <div class="flex items-baseline">
+            <input
+                class="accent-gray-900 cursor-pointer flex-grow mr-3"
+                type="range"
+                bind:value={currentTime}
+                max={duration}
+            />
+            <SkipButton type="prev" on:click={prev} />
+            <SkipButton type="next" on:click={next} />
         </div>
     </div>
-
-    <div class="flex items-baseline">
-        <input
-        class="accent-gray-900 cursor-pointer flex-grow mr-3"
-        type="range"
-        bind:value={currentTime}
-        max={duration}
-        />
-        <SkipButton type="prev" on:click={prev} />
-        <SkipButton type="next" on:click={next} />
+    <div class="py-5">
+        <h1 class="px-3 pb-3">Tracklist:</h1>
+        {#each tracklist as { name }, i}
+        <div>
+            <button class="{active == i && 'font-bold'} px-3 py-1.5 active:scale-95 active:bg-slate-200"
+            on:click={() => setTrack(i)}>
+            <PlaylistButton isLoading={isLoading? active == i: false} isPlaying={isPlaying? active == i: false}/>
+            <span class="ml-2">{i + 1}. {name}</span>
+            </button>
+        </div>
+        {/each}
     </div>
 </div>
 
-<div class="p-3">
-    {#each tracklist as { name }, i}
-    <div>
-        <span>{i + 1}.</span>
-        <button
-        class="{active == i && 'font-bold'} py-1.5 px-2 mb-0.5 active:scale-95  active:bg-slate-200"
-        on:click={() => setTrack(i)}>{name}</button
-        >
-    </div>
-    {/each}
-</div>
+<!-- tracklist
+active
+setTrack() -->

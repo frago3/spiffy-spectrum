@@ -8,8 +8,8 @@ const albums = await getCollection("albums");
 ---
 
 <Layout title="Pilotopardo">
-    <main class="p-3 bg-slate-200 min-h-svh">
-        <section class="grid grid-cols-2 gap-4 md:grid-cols-3">
+    <main class="bg-slate-200 p-3 md:p-8 min-h-svh">
+        <section class="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-9">
             {albums.map(album => <Album album={album}/>)}
         </section>
     </main>
