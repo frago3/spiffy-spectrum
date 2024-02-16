@@ -40,7 +40,6 @@
         duration = player.duration;
         isLoading && (isLoading = false);
         isPlaying && player.play();
-        console.log("setduration");
     }
     function setTrack(selected) {
         if (active == selected) {
@@ -62,50 +61,40 @@
     src={track.src}
 ></audio>
 
-<div class="border pt-3 pl-3">
-    <div class="flex items-end gap-x-3">
-        <PlayButton
-            on:click={() => (isPlaying ? pause() : play())}
-            {isPlaying}
-            {isLoading}
-        />
-
-        <div>
-            <h1 class="font-bold text-lg block md:hidden">{albumName}</h1>
-            <span>{track.name}</span>
-            <span class="text-sm ml-1"
-                >{formatTime(currentTime)} / {formatTime(duration)}</span
-            >
-        </div>
-    </div>
-
-    <div class="flex items-baseline">
-        <input
-            class="accent-gray-900 cursor-pointer flex-grow mr-3"
-            type="range"
-            bind:value={currentTime}
-            max={duration}
-        />
-        <SkipButton type="prev" on:click={prev} />
-        <SkipButton type="next" on:click={next} />
-    </div>
-</div>
-
-
-<div class="py-5">
+<div class="mb-5 hidden md:block">
     {#each tracklist as { name }, i}
-    <div>
-        <button class="py-2 px-3 {active == i && 'font-bold'} active:scale-95 active:bg-slate-200" on:click={() => setTrack(i)}>
-            <PlaylistButton
-            isLoading={isLoading ? active == i : false}
-            isPlaying={isPlaying ? active == i : false}
-            />
-            <span class="ml-2">{i + 1}. {name}</span>
-        </button>
-    </div>
+        <PlaylistButton isLoading={isLoading ? active == i : false} isPlaying={isPlaying ? active == i : false} on:click={() => setTrack(i)}>
+            <span class={active == i && "font-bold"}>{i + 1}. {name}</span>
+        </PlaylistButton>
     {/each}
 </div>
 
-<!-- tracklist
-active
-setTrack() -->
+<div class="mt-auto flex gap-x-3">
+
+    <PlayButton on:click={() => (isPlaying ? pause() : play())} {isPlaying} {isLoading}/>
+
+    <div class="w-full flex flex-col">
+        <div class="mt-auto">
+            <span class="mr-2 hidden md:block">{albumName} - {track.name}</span>
+            <span class="mr-0.5 font-bold md:hidden">{track.name}</span>
+            <span class="text-sm">{formatTime(currentTime)} / {formatTime(duration)}</span>
+        </div>
+        <div class="flex">
+            <input class="accent-gray-900 cursor-pointer flex-grow mr-3"
+                type="range"
+                bind:value={currentTime}
+                max={duration}
+            />
+            <SkipButton type="prev" on:click={prev} />
+            <SkipButton type="next" on:click={next} />
+        </div>
+    </div>
+</div>
+
+<div class="mt-5 md:hidden">
+    {#each tracklist as { name }, i}
+        <PlaylistButton isLoading={isLoading ? active == i : false} isPlaying={isPlaying ? active == i : false} on:click={() => setTrack(i)}>
+            <span class={active == i && "font-bold"}>{i + 1}. {name}</span>
+        </PlaylistButton>
+    {/each}
+</div>

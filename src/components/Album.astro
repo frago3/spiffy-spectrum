@@ -11,5 +11,5 @@ const { album } = Astro.props;
 
 <a class="active:scale-95" href={url(album.id)}>
     <Image src={album.data.cover} alt={album.id}/>
-    <p class="text-sm font-bold">{album.data.name}</p>
+    <p class="text-sm font-bold mt-0.5 mb-1">{album.data.name}</p>
 </a>

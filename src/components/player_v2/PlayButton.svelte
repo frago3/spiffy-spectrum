@@ -4,11 +4,11 @@
 </script>
 
 {#if isLoading}
-    <button class="p-3 border border-gray-300 pointer-events-none">
+    <button class="p-3 pointer-events-none">
         <svg
             class="animate-spin"
-            width="33"
-            height="33"
+            width="31"
+            height="31"
             viewBox="0 0 80 80"
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
@@ -18,10 +18,10 @@
         </svg>
     </button>
 {:else}
-    <button class="p-3 border border-gray-300 active:scale-95" on:click>
+    <button class="p-3 active:scale-90 active:bg-slate-200" on:click>
         <svg
-            width="33"
-            height="33"
+            width="31"
+            height="31"
             viewBox="0 0 24 24"
             stroke-width="1.5"
             fill="currentColor"

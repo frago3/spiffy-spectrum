@@ -1,4 +1,18 @@
 ---
+import Layout from "../layouts/Layout.astro";
+import Main from "../layouts/Main.astro";
+---
+
+<Layout title="Pilotopardo bio">
+    <Main>
+        <section class="mx-auto md:w-3/4">
+            <h1>bio...</h1>
+        </section>
+    </Main>
+</Layout>
+
+
+<!-- ---
 import { getCollection } from "astro:content";
 
 import Layout from "../layouts/Layout.astro";
@@ -10,8 +24,8 @@ const albums = await getCollection("albums");
 
 <Layout title="Pilotopardo">
     <Main>
-        <section class="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-9">
+        <section class="mx-auto grid grid-cols-2 gap-4 md:w-3/4 md:grid-cols-3 md:gap-9">
             {albums.map((album) => <Album album={album} />)}
         </section>
     </Main>
-</Layout>
+</Layout> -->
