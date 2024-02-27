@@ -2,16 +2,15 @@
 import { getCollection } from "astro:content";
 
 import Layout from "../layouts/Layout.astro";
+import Main from "../layouts/Main.astro";
 import Album from "../components/Album.astro";
 
 const albums = await getCollection("albums");
 ---
 
-<Layout title="Pilotopardo música">
-    <main class="pb-10 md:pt-7">
-        <section class="mx-auto max-w-screen-xl flex flex-col gap-8 px-3 md:px-8">
-        <!-- <section class="mx-auto max-w-screen-xl px-3 grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-9 md:px-8"> -->
-            {albums.map((album) => <Album album={album} />)}
-        </section>
-    </main>
+<Layout title="Pilotopardo">
+    <Main>
+        {albums.map(album => <Album album={album}/>)}
+    </Main>
 </Layout>
+

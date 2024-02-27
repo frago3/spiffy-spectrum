@@ -3,13 +3,13 @@
     export let isLoading = false;
 </script>
 
-<button class="py-2 pr-3 flex gap-x-3 active:scale-95" on:click>
+<button class="py-2 pr-2 flex gap-x-3 active:scale-95" on:click>
 {#if isLoading}
-    <span class="p-1 border border-gray-300">
+    <span class="p-1">
         <svg
             class="animate-spin"
-            width="12"
-            height="12"
+            width="14"
+            height="14"
             viewBox="0 0 80 80"
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +22,7 @@
     <svg
         width="22"
         height="22"
-        class="p-1 border border-gray-300"
+        class="p-1"
         viewBox="0 0 24 24"
         stroke-width="1.5"
         fill="currentColor"

@@ -2,12 +2,12 @@
     export let type;
 </script>
 
-<button class="px-2 py-1 active:scale-90" on:click>
+<button class="px-1 py-3 active:scale-90" on:click>
     <svg
         xmlns="http://www.w3.org/2000/svg"
         transform={type == "prev" ? "rotate(180)" : "rotate(0)"}
-        width="19"
-        height="19"
+        width="22"
+        height="22"
         viewBox="0 0 80 80"
         fill="currentColor"
         stroke="currentColor"
