@@ -7,10 +7,10 @@
     export let albumName = ""
     let audio;
     let duration = 0;
-    // let currentTime = 0;
     $tracklistStore = tracklist;
     $isPlaying = false
     $index = 0
+    $currentTime = 0
 
     // $: $isPlaying ? audio.play() : audio.pause();
     $: try { $isPlaying? audio.play():audio.pause() } catch {}
