@@ -48,7 +48,7 @@
         <span>{$tracklistStore[$index].duration}</span>
     </div>
     <input class="accent-gray-900 cursor-pointer w-full" type="range" bind:value={$currentTime} max={duration}/>
-    <div class="mt-1 mb-2 flex justify-end gap-x-0.5">
+    <div class="mt-1 mb-4 flex justify-end gap-x-0.5">
         <SkipButton type="prev" on:click={prev}/>
         <PlayButton on:click={$isPlaying? pause:play} isLoading={$isLoading} isPlaying={$isPlaying}/>
         <SkipButton type="next" on:click={next}/>
