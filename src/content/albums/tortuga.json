@@ -4,24 +4,29 @@
     "cover": "./cover/tortuga.jpg",
     "tracklist": [
         {
-            "src": "https://sveltejs.github.io/assets/music/strauss.mp3",
-            "title": "The Blue Danube Waltz"
+            "title": "The Blue Danube Waltz",
+            "duration": "00:30",
+            "src": "https://sveltejs.github.io/assets/music/strauss.mp3"
         },
         {
-            "src": "https://sveltejs.github.io/assets/music/holst.mp3",
-            "title": "Mars, the Bringer of War"
+            "title": "Mars, the Bringer of War",
+            "duration": "00:30",
+            "src": "https://sveltejs.github.io/assets/music/holst.mp3"
         },
         {
-            "src": "https://sveltejs.github.io/assets/music/satie.mp3",
-            "title": "Gymnopédie no. 1"
+            "title": "Gymnopédie no. 1",
+            "duration": "00:30",
+            "src": "https://sveltejs.github.io/assets/music/satie.mp3"
         },
         {
-            "src": "https://sveltejs.github.io/assets/music/beethoven.mp3",
-            "title": "Symphony no. 5 in Cm, Op. 67"
+            "title": "Symphony no. 5 in Cm, Op. 67",
+            "duration": "00:30",
+            "src": "https://sveltejs.github.io/assets/music/beethoven.mp3"
         },
         {
-            "src": "https://sveltejs.github.io/assets/music/mozart.mp3",
-            "title": "Requiem in D minor, K. 626"
+            "title": "Requiem in D minor, K. 626",
+            "duration": "00:30",
+            "src": "https://sveltejs.github.io/assets/music/mozart.mp3"
         }
     ]
 }

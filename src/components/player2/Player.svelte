@@ -1,4 +1,5 @@
 <script>
+    import { onMount } from "svelte";
     import { play, pause, isLoading, isPlaying, index, currentTime, tracklistStore, formatTime } from "./store";
     import PlayButton from "./PlayButton.svelte";
     import SkipButton from "./SkipButton.svelte";
@@ -8,13 +9,12 @@
     let audio;
     let duration = 0;
     $tracklistStore = tracklist;
-    $isPlaying = false
-    $index = 0
-    $currentTime = 0
+    // $index = 0
+    // $currentTime = 0
 
-    // $: $isPlaying ? audio.play() : audio.pause();
     $: try { $isPlaying? audio.play():audio.pause() } catch {}
 
+    onMount(() => audio.load())
 
     function next() {
         $isLoading = true;
@@ -45,10 +45,10 @@
     <span class="">{albumName}</span>
     <div class="flex justify-between text-sm mt-4">
         <span>{formatTime($currentTime)}</span>
-        <span>{formatTime(duration)}</span>
+        <span>{$tracklistStore[$index].duration}</span>
     </div>
     <input class="accent-gray-900 cursor-pointer w-full" type="range" bind:value={$currentTime} max={duration}/>
-    <div class="mt-1 flex justify-end gap-x-2">
+    <div class="mt-1 mb-2 flex justify-end gap-x-0.5">
         <SkipButton type="prev" on:click={prev}/>
         <PlayButton on:click={$isPlaying? pause:play} isLoading={$isLoading} isPlaying={$isPlaying}/>
         <SkipButton type="next" on:click={next}/>

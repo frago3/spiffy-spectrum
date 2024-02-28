@@ -3,7 +3,7 @@ import { writable } from "svelte/store";
 export const isPlaying = writable(false)
 export const tracklistStore = writable([])
 export const index = writable(0)
-export const isLoading = writable(false)
+export const isLoading = writable(true)
 export const currentTime = writable(0)
 
 export function play() {

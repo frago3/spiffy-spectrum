@@ -10,10 +10,11 @@ type Props = {
 };
 
 const { album } = Astro.props;
+console.log(album.data.tracklist)
 ---
 
 <!-- <section class="px-5 py-8 flex gap-x-14 flex-col md:flex-row md:py-32 md:px-8"> -->
-<section class="px-5 py-8 md:py-28 md:px-8">
+<section class="px-4 py-8 md:py-28 md:px-8">
     <h1 class="text-2xl font-bold mb-1 hidden md:block">{album.data.name}</h1>
     <div class="flex gap-x-14 flex-col md:flex-row">
 

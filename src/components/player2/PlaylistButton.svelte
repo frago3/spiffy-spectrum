@@ -5,11 +5,11 @@
 
 <button class="py-2 pr-2 flex gap-x-3 active:scale-95" on:click>
 {#if isLoading}
-    <span class="p-1">
+    <span class="p-0.5">
         <svg
             class="animate-spin"
-            width="14"
-            height="14"
+            width="18"
+            height="18"
             viewBox="0 0 80 80"
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"

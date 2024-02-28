@@ -7,7 +7,8 @@ const albums = defineCollection({
         cover: image(),
         tracklist: z.array(z.object({
             title: z.string(),
-            src: z.string().url()
+            src: z.string().url(),
+            duration: z.string(),
         }))
     })
 })
