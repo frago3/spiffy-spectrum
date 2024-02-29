@@ -41,14 +41,14 @@
 />
 
 <div class="mt-3 flex flex-col">
-    <span class="text-lg font-bold">{$tracklistStore[$index].title}</span>
+    <span class="text-xl font-bold">{$tracklistStore[$index].title}</span>
     <span class="">{albumName}</span>
     <div class="flex justify-between text-sm mt-4">
         <span>{formatTime($currentTime)}</span>
         <span>{$tracklistStore[$index].duration}</span>
     </div>
-    <input class="accent-gray-900 cursor-pointer w-full" type="range" bind:value={$currentTime} max={duration}/>
-    <div class="mt-1 mb-4 flex justify-end gap-x-0.5">
+    <input class="accent-black cursor-pointer w-full" type="range" bind:value={$currentTime} max={duration}/>
+    <div class="my-4 flex justify-end gap-x-0.5">
         <SkipButton type="prev" on:click={prev}/>
         <PlayButton on:click={$isPlaying? pause:play} isLoading={$isLoading} isPlaying={$isPlaying}/>
         <SkipButton type="next" on:click={next}/>

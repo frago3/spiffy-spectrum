@@ -1,7 +1,5 @@
 <script>
     import { tracklistStore, index, isPlaying, isLoading, pause, play, currentTime, formatTime } from "./store";
-    import PlaylistButton from "./PlaylistButton.svelte";
-
 
     function setTrack(selected) {
         if ($index == selected){
@@ -15,12 +13,11 @@
 
 </script>
 
-
 {#each $tracklistStore as { title, duration }, i }
-    <div class="flex justify-between items-center {i == $index && "font-bold"}">
-        <PlaylistButton isLoading={$isLoading? $index == i:false} isPlaying={$isPlaying? $index == i:false} on:click={() => setTrack(i)}>
-            <span class="text-left">{i + 1}. {title}</span>
-        </PlaylistButton>
+    <div class="flex justify-between items-baseline {i == $index? "font-bold":""}">
+        <button class="text-left py-2 pr-2 hover:underline {$isLoading? "cursor-wait":"active:scale-95"}" on:click={() => setTrack(i)}>
+            {i + 1}. {title}
+        </button>
         <span class="text-sm text-right">{i == $index? `${formatTime($currentTime)} / ${duration}`:`${duration}`}</span>
     </div>
 {/each}
