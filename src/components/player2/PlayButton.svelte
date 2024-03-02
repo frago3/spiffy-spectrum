@@ -4,7 +4,7 @@
 </script>
 
 
-<button class="px-3 py-3 {isLoading? "cursor-wait":"active:scale-90"} hover:scale-110" on:click>
+<button class="px-3 py-3 {isLoading? "cursor-wait":"active:scale-90"}" on:click>
     <svg xmlns="http://www.w3.org/2000/svg" class={isLoading? "animate-spin":""} width="56" height="56" viewBox="0 0 24 24" stroke-width={isLoading? "2.5": "0.5"} stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
     {#if isLoading}
         <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
