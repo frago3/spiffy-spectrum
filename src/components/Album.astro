@@ -12,11 +12,12 @@ type Props = {
 const { album } = Astro.props;
 ---
 
-<section class="px-5 pb-10 md:py-20 md:px-8">
-    <h1 class="mb-2 text-2xl font-bold hidden md:block">{album.data.name}</h1>
-    <div class="flex gap-x-12 flex-col md:flex-row">
+<!-- <section class="px-5 pb-10 md:py-16 md:px-8"> -->
+<section class="px-5 pb-6 md:py-8 md:px-8">
+    <!-- <h1 class="text-2xl font-bold hidden md:block">{album.data.name}</h1> -->
+    <div class="flex gap-x-16 flex-col md:flex-row">
 
-        <div class="md:w-5/12 md:mt-2.5">
+        <div class="md:w-6/12 md:mt-2.5">
             <Image src={album.data.cover} alt={album.id}/>
             <Player tracklist={album.data.tracklist} albumName={album.data.name} client:load/>
         </div>

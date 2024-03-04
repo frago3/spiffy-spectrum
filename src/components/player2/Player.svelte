@@ -48,7 +48,7 @@
         <span>{formatTime($currentTime)}</span>
         <span>{$tracklistStore[$index].duration}</span>
     </div>
-    <div class="mb-3 mt-1 flex justify-end gap-x-0.5">
+    <div class="mb-3 flex justify-center gap-x-0.5">
         <SkipButton type="prev" on:click={prev}/>
         <PlayButton on:click={$isPlaying? pause:play} isLoading={$isLoading} isPlaying={$isPlaying}/>
         <SkipButton type="next" on:click={next}/>
