@@ -43,7 +43,7 @@
 <div class="my-2.5 flex flex-col">
     <span class="text-xl font-bold">{$tracklistStore[$index].title}</span>
     <span class="text-lg">{albumName}</span>
-    <input class="mt-4 accent-black cursor-pointer w-full" type="range" bind:value={$currentTime} max={duration}/>
+    <input class="mt-4 mb-2 h-1.5 accent-black cursor-pointer w-full" type="range" bind:value={$currentTime} max={duration}/>
     <div class="flex justify-between">
         <span>{formatTime($currentTime)}</span>
         <span>{$tracklistStore[$index].duration}</span>
